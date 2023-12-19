@@ -33,7 +33,7 @@ export class AuthGuard implements CanActivate {
         secret: jwtConstants.secret,
       });
       request['user'] = payload;
-    } catch {
+    } catch (error) {
       throw new ForbiddenException('Аутентификация не выполнена. Пожалуйста, предоставьте токен.');
     }
     return true;

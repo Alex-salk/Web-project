@@ -3,14 +3,20 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class Students {
   @PrimaryGeneratedColumn()
-  id: number;
+  student_id: number;
 
   @Column({ length: 100 })
-  fullname: string;
+  full_name: string;
 
-  @Column({ length: 100 })
-  groups: string;
+  @Column({ length: 50, nullable: true })
+  group: string;
 
-  @Column({ length: 100 })
-  universityId: string;
+  @Column({ length: 100, nullable: true })
+  institution: string;
+
+  @Column({ type: 'int', nullable: true })
+  admission_year: number;
+
+  @Column({ type: 'int', nullable: true })
+  age: number;
 }
