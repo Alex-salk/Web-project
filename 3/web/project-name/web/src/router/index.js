@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import LoginForm from '../views/LoginForm.vue';
-import HomePage from '../components/HomePage.vue';
+import LoginPage from '../pages/login/LoginPage';
+import HomePage from '../pages/HomePage.vue';
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: LoginForm },
+    { path: '/', component: LoginPage },
     { path: '/Home', component: HomePage, meta: { requiresAuth: true } },
   ],
 });
